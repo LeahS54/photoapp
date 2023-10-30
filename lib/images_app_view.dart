@@ -134,7 +134,6 @@ class _MultipleImageSelectorState extends State<MultipleImageSelector> {
         maxWidth: 600);
     xfilePick.clear();
     xfilePick.add(pickedCameraFile!);
-
     setState(
       () {
         if (xfilePick.isNotEmpty) {

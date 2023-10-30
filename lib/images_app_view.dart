@@ -55,20 +55,20 @@ class _MultipleImageSelectorState extends State<MultipleImageSelector> {
               padding: EdgeInsets.symmetric(vertical: 18.0),
               child: Text(
                 "All Photos: ",
-                textScaleFactor: 3,
+                textScaleFactor: 2,
                 style: TextStyle(color: Colors.purple),
               ),
             ),
             Expanded(
               child: SizedBox(
-                width: 300.0,
+                // width: 300.0,
                 child: selectedImages.isEmpty
                     ? const Center(child: Text('No photos selected'))
                     : GridView.builder(
                         itemCount: selectedImages.length,
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 3),
+                                crossAxisCount: 2),
                         itemBuilder: (BuildContext context, int index) {
                           return GestureDetector(
                             onTap: () {
@@ -107,7 +107,7 @@ class _MultipleImageSelectorState extends State<MultipleImageSelector> {
 
   Future getImages() async {
     final pickedFile = await picker.pickMultiImage(
-        imageQuality: 50, maxHeight: 800, maxWidth: 600);
+        imageQuality: 100, maxHeight: 1800, maxWidth: 1600);
 
     xfilePick.clear();
     xfilePick.addAll(pickedFile);
